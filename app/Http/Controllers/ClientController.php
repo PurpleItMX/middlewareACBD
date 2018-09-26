@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -22,7 +23,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return  view('/client/index');
+         $clients = DB::select('select * from clients');
+        return  view('/client/index',['clients' => $clients]);
     }
 
      /**
@@ -32,7 +34,7 @@ class ClientController extends Controller
      */
     public function new()
     {
-        return  view('/client/form');
+        return  view('/client/form', ['client' =>'']);
     }
 
 
@@ -41,8 +43,22 @@ class ClientController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-    public function edit()
+    public function edit($id)
+    {
+
+        $client = DB::select('select * from clients where id_client = ?', [$id]);
+        return  view('/client/form', ['client' => $client]);
+    }
+
+
+    /**
+     * save un new client or update a client.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function save($id)
     {
         return  view('/client/form');
     }
+
 }

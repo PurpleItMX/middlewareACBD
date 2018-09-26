@@ -1,3 +1,13 @@
 div.container{
         width: 80%;
 }
+
+div.footer-page 
+{
+    position: inherit;
+    margin-top: 470px;
+    height: 40px;
+    padding:5px 0px;
+    clear: both;
+    text-align: center;
+}

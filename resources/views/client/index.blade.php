@@ -9,49 +9,34 @@
 				<th>ID</th>
 				<th>Nombre:</th>
 				<th>Ruta:</th>
+				<th>Acciones:</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>1</td>
-				<td>Cliente 1</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>2</td>
-				<td>Cliente 2</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>3</td>
-				<td>Cliente 3</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>4</td>
-				<td>Cliente 4</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>5</td>
-				<td>Cliente 5</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>6</td>
-				<td>Cliente 6</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>7</td>
-				<td>Cliente 7</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>1</td>
-				<td>Cliente 1</td>
-				<td></td>
-			</tr>
+			@foreach ($clients as $client)
+				<tr>
+					<td>{{ $client->id_client }}</td>
+					<td>{{ $client->name }}</td>
+					<td>{{ $client->url }}</td>
+					<td>
+						<a type="button" class="btn btn-secondary btn-sm" href="{{ url('/client/edit/'.$client->id_client)}}">
+							<span class="glyphicon glyphicon-search" aria-hidden="true">
+								Editar
+							</span>
+						</a>
+						<a type="button" class="btn btn-info btn-sm" href="{{ url('/client/view/'.$client->id_client)}}">
+							<span class="glyphicon glyphicon-search" aria-hidden="true">
+								Compañias
+							</span>
+						</a>
+						<a type="button" class="btn btn-danger btn-sm" href="{{ url('/client/delete/'.$client->id_client)}}">
+							<span class="glyphicon glyphicon-search" aria-hidden="true">
+								Eliminar
+							</span>
+						</a>
+					</td>
+				</tr>
+			@endforeach
 		</tbody>
 	</table>
 	</div>

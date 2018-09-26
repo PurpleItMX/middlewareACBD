@@ -20,6 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/client', 'ClientController@index')->name('index');
 Route::get('/client/new', 'ClientController@new')->name('new');
-Route::get('/client/edit/{id}', function(){
-	return view('form');
-});
+Route::get('/client/edit/{id}',array('as' => 'id', 'uses' => 'ClientController@edit'));
+Route::get('/client/save/{id}',array('as' => 'id', 'uses' => 'ClientController@save'));
