@@ -12,10 +12,11 @@
 
     <!-- Styles -->
     <!--<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">-->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     <!-- style app-->
-    <!--<link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
-    <link href="{{ asset('css/signin.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/signin.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/datatables.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
    <!--<div id="app"> -->
@@ -96,13 +97,14 @@
         @yield('content')
     <!--</div>-->
     <!--scripts -->
-    <script src="js/jquery-3.3.1.min.js"></script>       
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{ URL::asset('js/jquery-3.3.1.min.js') }}"></script>       
+    <!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>-->
+    <script src="{{ URL::asset('js/popper.min.js') }}"></script>
+    <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="js/holder.min.js"></script>
+    <script src="{{ URL::asset('js/holder.min.js') }}"></script>
+    <script src="{{ URL::asset('js/datatables.min.js') }}"></script>
     <!-- js app -->
-    <!--<script src="{{ asset('js/app.js') }}"></script>-->
+    <script src="{{ URL::asset('js/app.js') }}"></script>
 </body>
 </html>
