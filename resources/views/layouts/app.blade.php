@@ -8,9 +8,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Administrador') }}</title>
 
     <!-- Styles -->
+    <!--<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!-- style app-->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -29,7 +32,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'Administrador') }}
                     </a>
                 </div>
 
@@ -73,8 +76,14 @@
 
         @yield('content')
     </div>
-
-    <!-- Scripts -->
+    <!--scripts -->
+    <script src="js/jquery-3.3.1.min.js"></script>       
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="js/holder.min.js"></script>
+    <!-- js app -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
